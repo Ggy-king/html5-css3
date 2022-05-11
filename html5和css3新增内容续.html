@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?athbg7');
+            src: url('fonts/icomoon.eot?athbg7#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?athbg7') format('truetype'),
+                url('fonts/icomoon.woff?athbg7') format('woff'),
+                url('fonts/icomoon.svg?athbg7#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        .content {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .content::before {
+            /* .content::before权重为11 */
+            /* 行内元素 需要转换 定位浮动displaty都可以 */
+            /* 这个content属性是必须写的 */
+            display: inline-block;
+            width: 30px;
+            height: 40px;
+            background-color: #ccc;
+            content: '我';
+        }
+
+        .content::after {
+            content: '我是小猪佩奇';
+        }
+
+        .box {
+            position: relative;
+            margin: 0 auto;
+            width: 200px;
+            height: 35px;
+            border: 1px solid red;
+        }
+
+        .box::after {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: 'icomoon';
+            /* content: ''; */
+            /* 可以使用编码加反斜杠 */
+            content: '\e94d';
+            color: red;
+            font-size: 18px;
+        }
+
+        .ppo::selection {
+            /* 表示鼠标选中后样式 */
+            background-color: blue;
+            color: pink;
+        }
+
+        .ppo::first-letter {
+            /* 选择块级元素中第一个字母 */
+            color: aqua;
+        }
+
+        .ppo::first-line {
+            /* 选择块级元素中第一行字母 */
+            color: bisque;
+        }
+    </style>
+</head>
+
+
+<body>
+    <p class="oo">css3 伪元素选择器（重点）</p>
+    <p>该可以利用css新建盒子从而简化html</p>
+    1 before 和 after 创建一个新元素 属于行内元素
+    2 新创建的元素在文档树中是找不到的，所以我们称之为伪元素
+    3 语法 element::before
+    4 before和after必须有content属性
+    5 before在父元素里面的前面创建元素，after在父元素里面的后面插入元素
+    6 伪元素和标签选择器一样 权重为1
+
+    <div class="content">
+        是
+    </div>
+    <div class="box">
+
+    </div>
+    <div class="ppo">151891818918918c1a891c8ae1c8ae1c8a1c8a1d8ae1c8a1cae8c18ac18a9dc1a8</div>
+
+    <p>figure标签中一般插入图片 但该标签内容一般是不重要的内含figcaption</p>
+    <figure>
+        <figcaption></figcaption>
+    </figure>
+
+
+    新增伪类
+    :empty 选择空标签
+    :focus 选择当前获得焦点的表单元素
+    :enabled 选择当前有效的表单元素
+    :disabled 选择当前无效的表单元素
+    :checked 选择当前已经被勾选的单选按钮或复选框
+    :root 选择根元素 即html标签
+</body>
+
+</html>

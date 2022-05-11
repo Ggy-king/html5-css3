@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>该部分有兼容问题 慎用</title>
+    <style>
+        input[value] {
+            color: aqua;
+        }
+
+        input[type=password] {
+            color: pink;
+        }
+
+        div[class^=icon] {
+            color: aqua;
+        }
+
+        section[class$=ss] {
+            color: blueviolet;
+        }
+
+        div[class*=ace] {
+            color: red;
+        }
+
+        .jiegou li:nth-child(2N) {
+            background-color: #ccc;
+        }
+
+        .lla section:first-of-type {
+            color: cadetblue;
+            /* 优先考虑这种type()写法 */
+        }
+    </style>
+</head>
+
+<body>
+    <header>头部标签</header>
+    <nav>导航栏标签</nav>
+    <article>内容标签</article>
+    <section>定义文档某位置标签</section>
+    <aside>侧边栏标签</aside>
+    <footer>底部标签</footer>
+    <p>1 新标签对搜索引擎友好</p>
+    <p>2 可以多次使用</p>
+    <p>3 ie9需要转化为块级元素</p>
+    <p>4 移动端更好用</p>
+    <p>video标签</p>
+
+    autoplay = 'autoplay' 视频自动播放
+    muted = 'muted' 视频静音播放 解决谷歌问题
+    controls = 'controls' 显示控制组件
+    loop = 'loop' 循环播放
+    preload = 'auto' 预先加载视频 'none' 不预先加载视频 (若加autoplay则无需写此代码)
+    poster = '照片地址' 等待过程中显示的图片
+
+    <video src="视频储存/mi.mp4" autoplay='autoplay' muted='muted' controls='controls' loop="loop"
+        poster="图片储存\毕尔希.png">三种视频格式 .mp4 最常用 .webm .ogg </video>
+    <p>audio标签</p>
+    类似视频标签 有autoplay controls loop src
+    <audio src="" autoplay controls loop></audio>
+    <!-- 可以采取写法 -->
+    <video autoplay='autoplay' muted='muted' controls='controls' loop="loop" poster="图片储存\毕尔希.png">
+        <source src="视频储存/mi.mp4" type="video/mp4">
+        <source src="视频储存/mi.mp4" type="video/ogg">
+    </video>
+
+    <p>新增input元素属性</p>
+    <form action="">
+        <!-- 需要加上表单域 -->
+        <ul>
+            <li><input type="email">限制邮箱格式</li>
+            <li><input type="url">限制网址格式</li>
+            <li><input type="date">限制日期格式</li>
+            <li><input type="time">限制时间格式</li>
+            <li><input type="month">限制月份格式</li>
+            <li><input type="week">限制周格式</li>
+            <li><input type="number" min="10" max="20">限制数字格式</li>
+            <li><input type="tel">限制手机号码格式</li>
+            <li><input type="search">限制搜索格式</li>
+            <li><input type="color">限制颜色格式</li>
+            <li><input type="range" min="10" max="50">拖曳条</li>
+            <li><input type="submit"></li>
+            datelist 为表单提示项 会智能感应
+            <input type="text" name="" id="" list="province-list">
+            <datalist id="province-list">
+                <option value="山东"></option>
+                <option value="山西"></option>
+                <option value="山高"></option>
+                <option value="山水"></option>
+                <option value="山里"></option>
+            </datalist>
+            <!-- 应该有提交 -->
+        </ul>
+    </form>
+    <!-- input 其他属性 -->
+    <!-- required = required 该内容不能为空
+    placeholder = 提示文本  提示信息
+    autofocus = autofocus 光标自动聚焦表单
+    autocomplete = off/on 提交某内容后返回页面出现下拉菜单显示你刚才提交的内容 一般为off 个人隐私
+    multiple = multiple 可以多选文件提交 -->
+    <form action="">
+        <input type="search" required placeholder="我爱你" autofocus autocomplete="off">
+        <input type="file" name="" id="" multiple>
+        <input type="submit">
+    </form>
+
+    <p>css3新增选择器</p>
+    <!-- 1 属性选择器简 -->
+    <!-- <style>
+        input[value] {
+            color :red;
+        }
+        元素加中括号加属性
+    </style> -->
+    <input type="text" value="aaa">
+    <input type="text">
+
+    <!-- 2 属性选择器加强 -->
+    <!-- <style>
+        可以不加引号
+        input[type=password]{
+            color: aliceblue;
+        }
+
+    </style> -->
+    <input type="text">
+    <input type="password">
+    <!-- 密码 -->
+
+    <!-- 3 属性选择器字母开头 -->
+    <!-- <style>
+        div[class^=icon] {
+            color: aqua;
+        }
+    </style> -->
+
+    <div class="icon1">属性选择器权重为10</div>
+    <div class="icon2">加上前面的类名权重为11</div>
+    <div class="icon3">^是选字母开头的</div>
+    <div class="icon4">$是选字母结尾的</div>
+    <div class="ggy">*是选任意字母的</div>
+    <!-- 4 属性选择器字母结尾 -->
+    <!-- <style>
+        section[class$=ss] {
+            color: blueviolet;
+        }
+    </style> -->
+
+
+    <section class="aass">123</section>
+    <section class="bb">456</section>
+    <!-- 5 属性选择器任意位置 -->
+    <!-- <style>
+        div[class*=ace] {
+            color: aquamarine;
+        }
+    </style> -->
+    6 input[alt~='as']选择有alt属性中有空格隔开的as的input标签
+    7 input[alt|='ass']选择有alt属性中以ass-开头的input标签
+
+
+    <div class="video">不变</div>
+    <div class="audio">不变</div>
+    <div class="placeholder">变</div>
+
+
+    <p>结构伪类选择器 权重为10</p>
+    ul li:frist-child {} ul中Li标签中所有属性排序选择第一个
+    ul li:last-child {} ul中li标签中所有属性排序选择最后一个
+    ul li:nth-child(n) {} ul中li标签中所有属性排序选择第n个 n可以是数字 特殊字母 数学公式(2即第二个 even为偶数odd为奇数 2n偶 2n+1奇 n从0开始取) -->
+    E:frist-of-type {} 同第一个 区别是E属性中的第一个 不是全部排序
+    E:last-of-type {} 同第二个 区别是E属性中的最后一个 不是全部排序
+    E:nth-of-type(n) {} 同第三个 区别是E属性中的任意 不是全部排序
+    还有 nth-last-of-type() 这样写也可以 直接选择倒数第几个
+    <ul class="jiegou">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <div class="lla">
+        <i>9</i>
+        <section>10</section>
+        <section>11</section>
+    </div>
+</body>
+
+</html>

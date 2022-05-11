@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .box p {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 0;
+            background-color: yellow;
+            border-radius: 0;
+            /* transition: background-color 5s linear 0s; */
+            /* transition: left 5s linear 0s; */
+            transition: all 5s linear 0s;
+        }
+
+        .box:hover p {
+            left: 1000px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .bo {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .bo p {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all 3s linear 0s;
+
+        }
+
+        .bo:hover p {
+            transform: rotate(360deg) scale(1.5);
+        }
+
+        .b {
+            perspective: 300px;
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .b p {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transition: all 3s linear 0s;
+
+        }
+
+        .b:hover p {
+            transform: rotateX(360deg) rotateY(60deg) translateX(50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p></p>
+    </div>
+
+    <div class="bo">
+        <p></p>
+    </div>
+
+    <div class="b">
+        <p></p>
+    </div>
+    <p>linear 匀速</p>
+    <p>ease 两头快中间慢</p>
+    <p>ease-in 开始慢后来快</p>
+    <p>ease-out 开始快后来慢</p>
+    <p>ease-in-out 两头慢中间快</p>
+    <p>cubic-bezier() 贝塞尔曲线自定义 可以去网站上整</p>
+
+</body>
+
+</html>

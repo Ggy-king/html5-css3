@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        css3新特性
+        选择器
+        背景和边框
+        文本效果
+        2D/3D 转换 — 变形（transform）、过渡(transtion)、动画(animation)
+    </p>
+    <p>
+        选择器
+        :last-child /* 选择元素最后一个孩子 */
+        :first-child /* 选择元素第一个孩子 */（fer斯特）
+        :nth-child(1) /* 按照第几个孩子给它设置样式 */
+        :nth-child(even) /* 按照偶数 */
+        :nth-child(odd) /* 按照奇数 */
+        :disabled /* 选择每个禁用的dom元素 */
+        :checked /* 选择每个被选中的dom元素 */
+        :not(selector) /* 选择非 selector 元素的每个元素 */
+        ::selection /* 选择被用户选取的元素部分 */
+
+    </p>
+    <!-- 伪类和伪元素： -->
+    <!-- 根本区别在于它们是否创造了新的元素（抽象） -->
+    <!-- 伪类：用于向某些选择器添加特殊的效果（没有创建新元素） -->
+    <p>伪类
+        :last-child /* 选择元素最后一个孩子 */
+        :first-child /* 选择元素第一个孩子 */
+        :nth-child(1) /* 按照第几个孩子给它设置样式 */
+        a:link {color: #FF0000} /* 未访问的链接 */
+        a:visited {color: #00FF00} /* 已访问的链接 */
+        a:hover {color: #FF00FF} /* 鼠标移动到链接上 */
+        a:active {color: #0000FF} /* 选定的链接 */
+    </p>
+    <p>
+        伪元素
+        ::before {} /* 选择器在被选元素的前面插入内容和定义css，使用 content 属性来指定要插入的内容。 */
+        ::after {} /* 选择器在被选元素的后面插入内容和定义css，使用 content 属性来指定要插入的内容。 */
+        :first-letter /* 选择该元素内容的首字母 */
+        :first-line /* 选择该元素内容的首行 */
+        ::selection /* 选择被用户选取的元素部分 */
+    </p>
+    <p>背景
+        background-size：规定背景图片的尺寸（cover：填充；100% 100%：拉伸）
+
+        background-origin：规定背景图片的定位区域 对于 background-origin 属性，有如下属性 背景图片可以放置于
+        content-box、padding-box 或 border-box 区域
+    </p>
+    <p>
+        边框
+        border-radius：圆角
+        box-shadow / text-shadow：阴影
+        border-image：边框图片
+    </p>
+    <p>文本属性
+        属性 描述
+        text-shadow 向文本添加阴影
+        text-justify 规定当 text-align 设置为 “justify” 时所使用的对齐方法
+        text-emphasis 向元素的文本应用重点标记以及重点标记的前景色
+        text-outline 规定文本的轮廓
+        text-overflow 规定当文本溢出包含元素时发生的事情
+        text-wrap 规定文本的换行规则
+        word-break 规定文本的换行规则
+        word-wrap 允许对长的不可分割的单词进行分割并换行到下一行
+        text-decoration 文本修饰符：overline、line-through、underline 分别是上划线、中划线、下划线
+        @font-face 自定义字体
+        渐变，CSS3新增了渐变效果，包括 linear-gradient(线性渐变)和 radial-gradient(径向渐变)
+    </p>
+    <p>2d3d转换
+        变形transform
+
+        变形有rotate旋转、scale缩放、translate位移、skew倾斜
+
+        过渡transition
+
+        过渡transition是一个复合属性，可以同时定义transition-property、transition-duration、transition-timing-function、transition-delay子属性值
+        一般写在一起：
+
+        div
+        {
+        width:100px;
+        transition: width 2s;
+        -moz-transition: width 2s; /* Firefox 4 */
+        -webkit-transition: width 2s; /* Safari 和 Chrome */
+        -o-transition: width 2s; /* Opera */
+        }
+
+        动画animation
+
+        动画的使用，首先通过@（-webkit-)keyframes 定义动画名称及动画的行为，再通过animation属性设置动画特征相关值进行调用
+
+        .myClass {
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        -o-animation-name: fadeIn;
+        -ms-animation-name: fadeIn;
+        animation-name: fadeIn; /* 不带前缀的放到最后 */
+        }
+        /* 复杂属性 keyframes */
+        @-webkit-keyframes fadeIn {
+        0% { opacity: 0; } 100% { opacity: 0; }
+        }
+        @-moz-keyframes fadeIn {
+        0% { opacity: 0; } 100% { opacity: 0; }
+        }
+        @-o-keyframes fadeIn {
+        0% { opacity: 0; } 100% { opacity: 0; }
+        }
+        @-ms-keyframes fadeIn {
+        0% { opacity: 0; } 100% { opacity: 0; }
+        }
+        /* 不带前缀的放到最后 */
+        @keyframes fadeIn {
+        0% { opacity: 0; } 100% { opacity: 0; }
+        }
+        .myClass {
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        -o-animation-name: fadeIn;
+        -ms-animation-name: fadeIn;
+        animation-name: fadeIn; /* 不带前缀的放到最后 */
+        }
+
+        这些新属性大多在新版浏览器得到了支持，有些需要添加浏览器前缀（-webkit-、-moz-、-ms-、-o-）
+    </p>
+
+</body>
+
+</html>

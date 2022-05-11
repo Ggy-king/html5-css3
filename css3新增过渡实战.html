@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            overflow: hidden;
+            margin: 40px auto;
+        }
+
+        .box ul {
+            list-style: none;
+        }
+
+        .box ul li {
+            float: left;
+            width: 180px;
+            margin-right: 20px;
+            position: relative;
+            font-size: 12px;
+
+        }
+
+        .box ul li .info {
+            position: absolute;
+            width: 170px;
+            height: 20px;
+            line-height: 20px;
+            color: white;
+            bottom: 5px;
+            padding-left: 10px;
+            background-color: rgba(0, 0, 0, .5);
+            /* 这个是整体透明度 */
+            opacity: 0;
+            transition: opacity 1s ease 0s;
+        }
+
+        .box ul li:hover .info {
+            opacity: 1;
+        }
+
+        .box ul li img {
+            width: 180px;
+            height: 250px;
+        }
+
+
+
+        .box1 {
+            width: 500px;
+            height: 107px;
+            margin: 0 auto;
+            margin-top: 100px;
+            overflow: hidden;
+        }
+
+        .box1 ul li {
+            float: left;
+            width: 107px;
+            height: 107px;
+            margin-left: 10px;
+            list-style: none;
+            position: relative;
+        }
+
+        .box1 ul li::before {
+            content: '';
+            display: block;
+            width: 107px;
+            height: 107px;
+            transform: rotate(0);
+            transition: transform 1s ease 0s;
+
+        }
+
+        .box1 ul li:nth-child(1)::before {
+            background-image: url(./图片储存/a_1.png);
+        }
+
+        .box1 ul li:nth-child(2)::before {
+            background-image: url(./图片储存/a_2.png);
+        }
+
+        .box1 ul li:nth-child(3)::before {
+            background-image: url(./图片储存/a_3.png);
+        }
+
+        .box1 ul li:nth-child(4)::before {
+            background-image: url(./图片储存/a_4.png);
+        }
+
+        .box1 ul li img {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            left: 20%;
+            margin-top: -30px;
+            margin-left: 4px;
+            transform: scale(1);
+            transition: transform 0.5s ease 0s;
+        }
+
+        .box1 ul li:hover::before {
+            transform: rotate(360deg);
+        }
+
+        .box1 ul li img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <img src="./图片储存/小米1.png" alt="">
+                <div class="info">小米电视</div>
+            </li>
+            <li>
+                <img src="./图片储存/小米1.png" alt="">
+            </li>
+            <li>
+                <img src="./图片储存/小米1.png" alt="">
+            </li>
+            <li>
+                <img src="./图片储存/小米1.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <div class="box1">
+        <ul>
+            <li>
+                <img src="./图片储存/icon1.svg" alt="">
+            </li>
+            <li>
+                <img src="./图片储存/icon2.svg" alt="">
+            </li>
+            <li>
+                <img src="./图片储存/icon3.svg" alt="">
+            </li>
+            <li>
+                <img src="./图片储存/icon4.svg" alt="">
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

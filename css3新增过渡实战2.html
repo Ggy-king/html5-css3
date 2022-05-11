@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 40px auto;
+            perspective: 600px;
+            position: relative;
+        }
+
+        .box img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+
+        .box img.dog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0;
+            transform: rotateY(0);
+            transition: transform 1s ease 0s;
+        }
+
+        .box:hover .dog {
+            transform: rotateY(-180deg);
+        }
+
+        .no2 img.dog {
+            transform-origin: 0 100%;
+        }
+
+        .no2:hover img.dog {
+            transform: rotateX(-180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img class="cat" src="./图片储存/cat.jpg" alt="">
+        <img class="dog" src="./图片储存/dog.jpg" alt="">
+    </div>
+    <div class="box no2">
+        <img class="cat" src="./图片储存/cat.jpg" alt="">
+        <img class="dog" src="./图片储存/dog.jpg" alt="">
+    </div>
+</body>
+
+</html>
